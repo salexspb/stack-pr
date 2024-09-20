@@ -270,10 +270,10 @@ class StackEntry:
         return None in (self._pr, self._head, self._base)
 
     def pprint(self):
-        s = b(self.commit.commit_id()[:8])
+        s = ""
         pr_string = None
         if self.has_pr():
-            pr_string = blue("#" + self.pr.split("/")[-1])
+            pr_string = blue(self.pr)
         else:
             pr_string = red("no PR")
         branch_string = None
